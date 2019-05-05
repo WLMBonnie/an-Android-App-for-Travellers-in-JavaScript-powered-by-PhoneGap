@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "TravelPal",
+  "short_name": "TravelPal",
+  "version": "com.phonegap.travelpal",
+  "description": "A basic Framework7 template for PhoneGap.",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html"
+}

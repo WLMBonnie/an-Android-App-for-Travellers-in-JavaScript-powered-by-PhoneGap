@@ -1,0 +1,140 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+
+.panel-nav {
+    font-size: 20px;
+    color:darkkhaki;
+    font-style: oblique;  
+}
+
+.panel-links {
+    font-size: 15px;
+    color: beige;
+    font-style: oblique 
+}
+.statusbar-overlay {
+    background: #000000;
+}
+
+html {
+    font-size: 70%;
+    box-sizing: border-box;
+}
+
+
+/* the largest div for the main page */
+
+.welcome-area {
+    
+}
+
+.amount1, #currency1, #currency-amount-1 {
+    margin:3px;
+    border: none;
+    background-color: #C0C0C0;
+    font-size:14px;
+}
+
+#currency2, #currency-amount-2 {
+    margin:3px;
+    border: none;
+    font-size:14px;
+    background-color: #EFEFF4;
+}
+
+.num-pad-button:hover {
+    background-color: #d1ceced4;
+}
+
+
+.amount {
+    margin: 2px;
+}
+
+/* .calculator {
+border: 1px solid lightgray;
+border-radius: 5px;
+position: absolute;
+top: 50%;
+left:50%;
+transform: translate(-50%, -50%);
+width:50%;
+}
+ */
+/* 
+button {
+    height: 50px;
+    width: 80px;
+    background-color: black;
+    border-radius: 30px;
+    border: 1px solid #c3c3c3;
+    background-color: transparent;
+    font-size: 2rem;
+    color:black;
+    background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0,0,0,.04));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+    text-shadow: 0 1px rgba(255,255,255,.4);
+} */
+
+.all-clear {
+    background-color: lightcoral;
+    border-color: firebrick;
+    color:orange;
+}
+
+.all-clear:hover {
+    background-color:coral;
+}
+
+/* Below are for the currency convention page */
+
+.CurrencyConverSection {
+    position: relative;
+   
+}
+
+.num-pad-button {
+    border: 2px;
+    font-size: 45px;
+    text-align: center;
+    background-color: white;
+}
+
+.num-pad-side-button {
+    width: 80px;
+}
+
+td {
+    background-color: white;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    height: 280px;
+}
+
+
+/* Below are the weather page styling */
+
+.weather-button {
+    
+}
+
+.statusbar-overlay {
+    background: #000000;
+}
+
+#map {
+    height: 200px;
+}
