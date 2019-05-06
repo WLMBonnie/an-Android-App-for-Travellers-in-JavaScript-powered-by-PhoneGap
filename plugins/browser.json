@@ -21,9 +21,6 @@
     },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.phonegap.travelpal"
-    },
-    "cordova-plugin-permission": {
-      "PACKAGE_NAME": "com.phonegap.travelpal"
     }
   },
   "dependent_plugins": {}

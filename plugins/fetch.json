@@ -38,13 +38,5 @@
     },
     "is_top_level": true,
     "variables": {}
-  },
-  "cordova-plugin-permission": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-permission"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }

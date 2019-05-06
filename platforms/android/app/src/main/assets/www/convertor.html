@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+       
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+ -->
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Setting</p>
+            <p>About</p>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Travel Pal</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+
+                            <div class="welcome-area">
+                                <h2>Welcome to + city/country name!(will build it later)</h2>
+                            </div>
+
+                            <div class="CurrencyConverSection">
+                                <h2>Currency Convertor</h2>
+                                <form>
+                                    <br>
+                                    <div id="currency-amount-1">
+                                        <select name="1stcurrency" id="currency1">
+                                            <option value="USD">United States Dollar-USD</option>
+                                            <option value="GBP">Great British <Pound-GBP></Pound-GBP>
+                                            </option>
+                                            <option value="EUR">Euro-EUR</option>
+                                            <option value="HKD">Hong Kong Dollar-HKD</option>
+                                            <option value="JPY">Japanese Yen-JPY</option>
+                                            <option value="AUD">Australian Dollar-AUD</option>
+                                            <option value="BRL">Brazillian Real-BRL</option>
+                                            <option value="CAD">Canadian Dollar-CAD</option>
+                                            <option value="MOP">Macanese Pataca-MOP</option>
+                                            <option value="NZD">New Zealand Dollar-NZD</option>
+                                            <option value="NTD">New Taiwan Dollar-NTD</option>
+                                            <option value="RUB">Russian Ruble-RUB</option>
+                                            <option value="KRW">South Korean Won-KRW</option>
+                                            <option value="SGD">Singapore Dollar-SGD</option>
+                                            <option value="THB">Thai Baht-THB</option>
+                                            <option value="VND">Vietnamese Dong-VND</option>
+                                            <option value="INR">Indian Rupee-INR</option>
+                                            <option value="KHR">Cambodian Riel-KHR</option>
+                                            <option value="ARS">Algentine Peso-ARS</option>
+                                            <option value="DZD">Algerian Dinar-DZD</option>
+                                            <option value="LBP">Lebanese Pound-LNP</option>
+                                        </select>
+                                        <input class="amount1" id="1stAmt" type="text" name="0" onkeydown="preventKeyInput(event)" onkeypress="preventKeyInput(event)" onkeyup="preventKeyInput(event)"  onblur="selectInputField(this)">
+                                    </div>
+                                    <br>
+                                    <select name="2ndcurrency" id="currency2">
+                                        <option value="USD">United States Dollar-USD</option>
+                                        <option value="GBP">Great British <Pound-GBP></Pound-GBP>
+                                        </option>
+                                        <option value="EUR">Euro-EUR</option>
+                                        <option value="HKD">Hong Kong Dollar-HKD</option>
+                                        <option value="JPY">Japanese Yen-JPY</option>
+                                        <option value="AUD">Australian Dollar-AUD</option>
+                                        <option value="BRL">Brazillian Real-BRL</option>
+                                        <option value="CAD">Canadian Dollar-CAD</option>
+                                        <option value="MOP">Macanese Pataca-MOP</option>
+                                        <option value="NZD">New Zealand Dollar-NZD</option>
+                                        <option value="NTD">New Taiwan Dollar-NTD</option>
+                                        <option value="RUB">Russian Ruble-RUB</option>
+                                        <option value="KRW">South Korean Won-KRW</option>
+                                        <option value="SGD">Singapore Dollar-SGD</option>
+                                        <option value="THB">Thai Baht-THB</option>
+                                        <option value="VND">Vietnamese Dong-VND</option>
+                                        <option value="INR">Indian Rupee-INR</option>
+                                        <option value="KHR">Cambodian Riel-KHR</option>
+                                        <option value="ARS">Algentine Peso-ARS</option>
+                                        <option value="DZD">Algerian Dinar-DZD</option>
+                                        <option value="LBP">Lebanese Pound-LNP</option>
+                                    </select>
+
+                                    <input class="amount" id="2ndAmt" type="text" name="0" onkeydown="preventKeyInput(event)" onkeypress="preventKeyInput(event)" onkeyup="preventKeyInput(event)"  onblur="selectInputField(this)">
+                                    <br>
+                                    <select name="3rdcurrency" id="currency3">
+                                        <option value="USD">United States Dollar-USD</option>
+                                        <option value="GBP">Great British <Pound-GBP></Pound-GBP>
+                                        </option>
+                                        <option value="EUR">Euro-EUR</option>
+                                        <option value="HKD">Hong Kong Dollar-HKD</option>
+                                        <option value="JPY">Japanese Yen-JPY</option>
+                                        <option value="AUD">Australian Dollar-AUD</option>
+                                        <option value="BRL">Brazillian Real-BRL</option>
+                                        <option value="CAD">Canadian Dollar-CAD</option>
+                                        <option value="MOP">Macanese Pataca-MOP</option>
+                                        <option value="NZD">New Zealand Dollar-NZD</option>
+                                        <option value="NTD">New Taiwan Dollar-NTD</option>
+                                        <option value="RUB">Russian Ruble-RUB</option>
+                                        <option value="KRW">South Korean Won-KRW</option>
+                                        <option value="SGD">Singapore Dollar-SGD</option>
+                                        <option value="THB">Thai Baht-THB</option>
+                                        <option value="VND">Vietnamese Dong-VND</option>
+                                        <option value="INR">Indian Rupee-INR</option>
+                                        <option value="KHR">Cambodian Riel-KHR</option>
+                                        <option value="ARS">Algentine Peso-ARS</option>
+                                        <option value="DZD">Algerian Dinar-DZD</option>
+                                        <option value="LBP">Lebanese Pound-LNP</option>
+                                    </select>
+                                    <input class="amount" id="3rdAmt" type="text" name="0" onkeydown="preventKeyInput(event)" onkeypress="preventKeyInput(event)" onkeyup="preventKeyInput(event)"  onblur="selectInputField(this)">
+                                    <br>
+                                </form>
+                                <br>
+                            </div>
+
+                            <!--numeric keypad panel ref:https://freshman.tech/calculator/ -->
+
+
+                            <!-- <input type="text" class="calculator-display" value="" disabled> -->
+
+                            <div class="main">
+                                <div class=amountview1>
+                                  
+                                  <form name="form">
+                                    <input class="amountview1" onkeydown="preventKeyInput(event)" onkeypress="preventKeyInput(event)" onkeyup="preventKeyInput(event)" name="amountview1">
+                                    
+                                  </form>
+                                  <table>
+                                  
+                                  <tr>
+                                    <td><input class="num-pad-button" type="button" value="7" onclick="insert(7)"></td>
+                                    <td><input class="num-pad-button" type="button" value="8" onclick="insert(8)"></td>
+                                    <td><input class="num-pad-button" type="button" value="9" onclick="insert(9)"></td>
+                                    <td rowspan=2><input class="num-pad-button" type="button" value="AC" onclick="clean()"></td>       
+                                  </td>
+                                
+                                  <tr>
+                                    <td><input class="num-pad-button" type="button" value="4" onclick="insert(4)"></td>
+                                    <td><input class="num-pad-button" type="button" value="5" onclick="insert(5)"></td>
+                                    <td><input class="num-pad-button" type="button" value="6" onclick="insert(6)"></td>
+                                  </tr>
+                                
+                                  <tr>
+                                    <td><input class="num-pad-button" type="button" value="1" onclick="insert(1)"></td>
+                                    <td><input class="num-pad-button" type="button" value="2" onclick="insert(2)"></td>
+                                    <td><input class="num-pad-button" type="button" value="3" onclick="insert(3)"></td>
+                                    <td rowspan=2><input class="num-pad-button" style="height:50px;" type="button" value="&lt;" onclick="back()"></td>
+                                  </tr>
+                                
+                                  <tr>
+                                    <td colspan=2><input class="num-pad-button" style="width:50px;" type="button" value="0" onclick="insert(0)"></td>
+                                    <td><input class="num-pad-button" type="button" value="." onclick="insert('.')"></td>    
+                                  </tr>
+                                  
+                                </table>
+                                
+                                </div>
+                                  
+                                  
+                                </div>
+
+                            <!-- Link to another page -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+
+                    <!-- Toolbar links -->
+                    <a href="convertor.html" class="link">
+                        <img src="res/icon/android/exchange-rate.png" alt="Currency Convertor" style="width:35px;height:35px;border:0;">
+                    </a> 
+                    
+                    <a href="index.html" class="link">
+                        <img src="res/icon/android/weather.png" alt="Weather" style="width:35px;height:35px;border:0;">
+                    </a> 
+
+                    <a href="convertor.html" class="link">
+                        <img src="res/icon/android/diary.png" alt="Journey Dairy" style="width:35px;height:35px;border:0;">
+                    </a> 
+
+                    <a href="about.html" class="link">
+                        <img src="res/icon/android/information.png" alt="About app" style="width:35px;height:35px;border:0;">
+                    </a> 
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/convertor.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApFPNQ2WxbEueUXMJBPHjLenlPnFo68ls"></script>
+</body>
+
+</html>
