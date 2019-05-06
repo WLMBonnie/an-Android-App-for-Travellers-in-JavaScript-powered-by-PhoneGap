@@ -31,11 +31,5 @@
     <engine name="browser" spec="~5.0.4" />
     <plugin name="cordova-plugin-geolocation" spec="~4.0.1" />
     <plugin name="cordova-plugin-file" spec="~6.0.1" />
-    <config-file target="AndroidManifest.xml" parent="/*">
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        
-        
-    </config-file>
+    <plugin name="cordova-plugin-permission" spec="~0.1.0" />
 </widget>

@@ -186,6 +186,19 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-permission/www/index.js",
+        "id": "cordova-plugin-permission.Permission",
+        "pluginId": "cordova-plugin-permission",
+        "clobbers": [
+            "window.plugins.Permission"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-permission/tests/index.spec.js",
+        "id": "cordova-plugin-permission.tests",
+        "pluginId": "cordova-plugin-permission"
     }
 ];
 module.exports.metadata = 
@@ -195,7 +208,8 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.7",
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-geolocation": "4.0.1",
-    "cordova-plugin-file": "6.0.1"
+    "cordova-plugin-file": "6.0.1",
+    "cordova-plugin-permission": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

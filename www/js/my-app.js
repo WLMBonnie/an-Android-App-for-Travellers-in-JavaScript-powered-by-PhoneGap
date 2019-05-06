@@ -14,6 +14,11 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+
+    getPermission('android.permission.WRITE_EXTERNAL_STORAGE');
+    getPermission('android.permission.ACCESS_COARSE_LOCATION');
+    getPermission('android.permission.ACCESS_FINE_LOCATION');
+ 
     createFile();
     getPosition();
     openCage();
@@ -26,6 +31,20 @@ openCage();
 getCurrencyRate();
   
 })
+
+function getPermission(permission){
+  
+  var Permission = window.plugins.Permission;
+Permission.has(permission, function(results) {
+    if (!results[permission]) {
+        Permission.request(permission, function(results) {
+            if (result[permission]) {
+                // permission is granted
+            }
+        }, alert)
+    }
+}, alert)
+}
 
 
 // Option 2. Using one 'pageInit' event handler for all pages:
